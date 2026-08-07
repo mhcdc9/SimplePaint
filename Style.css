@@ -1,0 +1,39 @@
+canvas {
+    margin-top : 2rem;
+    margin-right : 2rem;
+    border: 0.1rem solid #000;
+    touch-action: none;
+}
+
+.preview {
+    width : 2.4 rem;
+    height : 1.2 rem;
+    border: 0.2rem solid #CA0;
+}
+
+.configs {
+    padding : 1rem;
+    margin-top : 1rem;
+    border: 0.2rem solid #f00;
+}
+
+.side {
+    display : flex;
+    flex-wrap: wrap;
+}
+
+.sticky {
+    position: sticky;
+    top: 10px;
+}
+
+td {
+    width : 1.2 rem;
+    height : 1.2 rem;
+    text-align: center;
+    border: 0.1rem solid #000;
+}
+
+td.selected {
+    border : 0.1rem solid #CA0;
+}

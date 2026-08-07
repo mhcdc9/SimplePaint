@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Simple Paint</title>
+        <link rel="stylesheet" href="./Style.css" />
+        <link rel="icon" type="image/x-icon" href="./icon.png">
+    </head>
+    <body oncontextmenu = "return false">
+        <div class="side">
+            <div>
+                <div class="side sticky">
+                    <div id="colorpreview" class="preview" background = "black"></div>
+                    <table id = "toolbar">
+                        <tr id = "toolSize">
+
+                        </tr>
+                        <tr id = "toolColor">
+
+                        </tr>
+                        <tr>
+                            
+                        </tr>
+                    </table>
+                    
+                </div>
+            
+                <div>
+                    <canvas id="canvas" oncontextmenu = "return false" width="500" height="500">
+                    Draw Something!
+                    </canvas>
+                    <div class="side">
+                        <div>   Size: </div>
+                        <div id="sizepreview" fontsize = "24">5</div>
+                    </div>
+
+                    <h4 id="coord"></h4>
+                    <button id = "save">Save</button>
+                </div>
+            </div>
+
+            <div class="configs">
+                <div>
+                    L: <input id="lightnessinput"></input>
+                    c: <input id="chromainput"></input>
+                    h: <input id="hueinput"></input>
+                </div>
+                <button onclick="setMainColorLCH(lightnessinput.value, chromainput.value, hueinput.value)">Set Current</button>
+                <button onclick="addSingle(lightnessinput.value, chromainput.value, hueinput.value)">Add Single</button>
+                <button onclick="addHue(lightnessinput.value, chromainput.value, hueinput.value)">Add Range</button>
+                <ul onclick = "(e) => colorNameToLCH(e)">
+                    Common Colors (Clickable)
+                    <li onclick="quickType('63','0.26', '29')">Red: (63, 0.26, 29)</li>
+                    <li onclick="quickType('79','0.17', '71')">Orange: (79, 0.17 71)</li>
+                    <li onclick="quickType('89','0.18', '95')">Gold: (89, 0.18, 95)</li>
+                    <li onclick="quickType('97','0.21', '110')">Yellow: (97, 0.21, 110)</li>
+                    <li onclick="quickType('87','0.29', '142')">Green: (87, 0.29, 142)</li>
+                    <li onclick="quickType('90','0.15', '195')">Cyan: (90, .15, 195)</li>
+                    <li onclick="quickType('45','0.31', '264')">Blue: (45, .31, 264)</li>
+                    <li onclick="quickType('42','0.19', '328')">Purple: (42, 0.19, 328)</li>
+                    <li onclick="quickType('70','0.32', '328')">Magenta: (70, 0.32, 328)</li>
+                </ul>
+                <div>
+                    <button onclick="resetColorRow(1)">Reset Top Color Row</button>
+                </div>
+                <div>
+                    <button onclick="resetColorRow(2)">Reset Bottom Color Row</button>
+                </div>
+
+                <p>WARNING: The buttons below will erase the entire drawing!</p>
+
+                Width: <input id="width" value="500">
+                Height: <input id="height" value="500">
+                <button onclick="setBounds(width.value, height.value)">Resize</button>
+                <div>
+                    <button onclick="paintBackground(mainColor)">Fill background using current color</button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script src="canvaseditor.js"></script>
+
+        
+    </body>
+</html>
